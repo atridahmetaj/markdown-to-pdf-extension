@@ -1,7 +1,7 @@
 {
-  "name": "markdown-to-pdf",
-  "displayName": "Markdown to PDF",
-  "description": "Convert Markdown files to PDF",
+  "name": "markdown-to-pdf-converter",
+  "displayName": "Markdown to PDF Converter",
+  "description": "Convert Markdown files to PDF with customizable styling",
   "version": "0.0.1",
   "publisher": "atridahmetaj",
   "author": {
