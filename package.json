@@ -1,0 +1,94 @@
+{
+  "name": "markdown-to-pdf",
+  "displayName": "Markdown to PDF",
+  "description": "Convert Markdown files to PDF",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-to-pdf.convertToPDF",
+        "title": "Markdown to PDF: Convert to PDF"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == markdown",
+          "command": "markdown-to-pdf.convertToPDF",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Markdown to PDF",
+      "properties": {
+        "markdownToPdf.fontSize": {
+          "type": "number",
+          "default": 11,
+          "description": "Font size in pixels for the PDF output",
+          "minimum": 8,
+          "maximum": 20
+        },
+        "markdownToPdf.paperFormat": {
+          "type": "string",
+          "default": "A4",
+          "enum": ["A3", "A4", "A5", "Legal", "Letter", "Tabloid"],
+          "description": "Paper format for the PDF"
+        },
+        "markdownToPdf.paperOrientation": {
+          "type": "string",
+          "default": "portrait",
+          "enum": ["portrait", "landscape"],
+          "description": "Paper orientation"
+        },
+        "markdownToPdf.paperBorder": {
+          "type": "string",
+          "default": "2cm",
+          "description": "Paper border/margin (e.g., '2cm', '1in', '10mm')"
+        },
+        "markdownToPdf.bodyPadding": {
+          "type": "number",
+          "default": 10,
+          "description": "Body padding in pixels",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "markdownToPdf.lineHeight": {
+          "type": "number",
+          "default": 1.5,
+          "description": "Line height multiplier",
+          "minimum": 1.0,
+          "maximum": 2.5
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.40.0",
+    "typescript": "^5.1.0"
+  },
+  "dependencies": {
+    "markdown-pdf": "^11.0.0"
+  }
+}
