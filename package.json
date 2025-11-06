@@ -3,6 +3,19 @@
   "displayName": "Markdown to PDF",
   "description": "Convert Markdown files to PDF",
   "version": "0.0.1",
+  "publisher": "atridahmetaj",
+  "author": {
+    "name": "Atri Dahmetaj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atridahmetaj/markdown-to-pdf-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atridahmetaj/markdown-to-pdf-extension/issues"
+  },
+  "homepage": "https://github.com/atridahmetaj/markdown-to-pdf-extension#readme",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
   },
